@@ -60,7 +60,6 @@ diff_expr <- function(countdata,metadata,conditions){
   cont.matrix <- makeContrasts(CtrlVsCond=cond2 - cond1,levels=design)
   fit.cont <- contrasts.fit(fit, cont.matrix)
   fit.cont <- eBayes(fit.cont)
-  fit.cont$p.value=pvalues
   summa.fit <- decideTests(fit.cont,adjust.method='bonferroni')
   
   #glXYPlot(x=fit.cont$coefficients[,1], y=fit.cont$lods[,1],
