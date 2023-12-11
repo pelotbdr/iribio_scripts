@@ -60,9 +60,8 @@ diff_expr <- function(countdata,metadata,conditions){
   cont.matrix <- makeContrasts(CtrlVsCond=cond2 - cond1,levels=design)
   fit.cont <- contrasts.fit(fit, cont.matrix)
   fit.cont <- eBayes(fit.cont)
-  pvalues=p.adjust(fit.cont$p.value,method='bonferroni')
   fit.cont$p.value=pvalues
-  summa.fit <- decideTests(fit.cont)
+  summa.fit <- decideTests(fit.cont,adjust.method='bonferroni')
   
   #glXYPlot(x=fit.cont$coefficients[,1], y=fit.cont$lods[,1],
   #         xlab="logFoldChange", ylab="-log10(adjusted_pvalue)", main="P25 vs Starved",
