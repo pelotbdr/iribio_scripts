@@ -63,7 +63,7 @@ diff_expr <- function(countdata,metadata,conditions){
   summa.fit <- decideTests(fit.cont,adjust.method='bonferroni')
   
   #glXYPlot(x=fit.cont$coefficients[,1], y=fit.cont$lods[,1],
-  #         xlab="logFoldChange", ylab="-log10(adjusted_pvalue)", main="P25 vs Starved",
+  #         xlab="logFoldChange", ylab="Log-odds of differential expression", main="",
   #         counts=v$E, groups=group, status=summa.fit[,1],
   #         anno=fit.cont$genes, side.main="gene_name", folder="volcano")
   
